@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="resources/img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Humble Website</title>
   </head>
@@ -15,13 +16,13 @@
           <div id="memoji-nav">
             <a href="/">
               <img src="resources/img/memoji-nav.png" alt="memoji-icon">
-              <!-- <p>Rahan</p> -->
+              <p>Rahan</p>
             </a>
           </div>
           <div id="jump">
             <a href="#home">Home</a>
-            <a href="#main-projects">Projects</a>
-            <a href="#side-projects">Other</a>
+            <a href="#main-projects">Experience</a>
+            <a href="#side-projects">Other Stuff</a>
             <a href="#more-of-me">Contact</a>
           </div>
         </nav>
@@ -38,13 +39,11 @@
           <h1>Greetings</h1>
           <p>
             I know this is the part where I should introduce myself, but have
-            you seen the little guy in the box? (Coming Soon...)
+            you seen the little sleepy guy? (Coming Soon...)
           </p>
           <p>
-            Anyways I like MacOS, Building stuff from scratch (including this
-            website) and Jailbreaking... I've never got my music taste
-            complimented before 🫩 and I'm just filling this with content until
-            god inspires me.
+            Now if you're actually interested in knowing , then click
+            <b><a id="jump-down" href="#more-of-me">Here!</a></b>
           </p>
         </div>
       </section>
@@ -60,7 +59,11 @@
           <!-- first project -->
           <article class="project-card">
             <figure>
-              <img src="resources/img/project-evixa.jpeg" alt="EVixa">
+              <img
+                class="project-icon"
+                src="resources/img/project-evixa.jpeg"
+                alt="EVixa"
+              >
               <h3>EVixa</h3>
               <a
                 class="main-project-link"
@@ -80,7 +83,7 @@
               <p>
                 Full-time Lead developer and system Administrator at
                 <a href="https://www.brenztravels.com" target="_blank">
-                  <u>BrenzTravels</u>
+                  <u>BrenzTravels</u>.
                 </a>
               </p>
             </div>
@@ -89,19 +92,23 @@
           <!-- more of the same -->
           <article class="project-card">
             <figure>
-              <img src="resources/img/project-vormi.png" alt="CRun terminal">
+              <img
+                class="project-icon"
+                src="resources/img/project-vormi.png"
+                alt="CRun terminal"
+              >
               <h3>Vormi</h3>
             </figure>
             <div class="card-description">
               <div class="tags">
-                <span>Backend Development</span>
+                <span>Backend</span>
                 <span>Team Management</span>
                 <span>Startup</span>
                 <span>Node.JS</span>
               </div>
               <p>
-                Native multi-language execution tool built for instal fast local
-                runs.
+                Backend lead and co-founder. designed the system, built the
+                services, ran the team and force-pushed and prayed.
               </p>
             </div>
           </article>
@@ -109,7 +116,11 @@
           <!-- more!!! -->
           <article class="project-card">
             <figure>
-              <img src="resources/img/project-crun.png" alt="CRun terminal">
+              <img
+                class="project-icon"
+                src="resources/img/project-crun.png"
+                alt="CRun terminal"
+              >
               <h3>CRun</h3>
               <a
                 class="main-project-link"
@@ -127,25 +138,236 @@
                 <span>Command Line Interface</span>
               </div>
               <p>
-                Native multi-language execution tool built for instant fast
+                Native multi-language execution tool built for clean and fast
                 local runs. Built with <i>Care</i> and <i>Passion</i>.
               </p>
             </div>
           </article>
 
-          <!-- more -->
+          <!-- ahhhhh -->
+          <article class="project-card">
+            <figure>
+              <img
+                class="project-icon"
+                src="resources/img/project-playdate.png"
+                alt="PlayDate"
+              >
+              <h3 class="coming-soon">Coming Soon...</h3>
+            </figure>
+            <div class="card-description">
+              <div class="tags">
+                <span>Game Development</span>
+                <span>Low Level Development</span>
+                <span>Homebrew</span>
+              </div>
+              <p> A pretty cool PlatDate project... stay tuned ( ͡° ͜ʖ ͡°) </p>
+            </div>
+          </article>
         </div>
       </section>
 
       <div class="wavy-line"></div>
 
       <!-- side projects -->
-      <section id="side-projects">
+      <section id="side-projects" class="open">
         <h2 class="section-header">
-          <img src="resources/svg/joystick.svg" alt="" aria-hidden="true">
+          <img src="resources/svg/box.svg" alt="" aria-hidden="true">
           <del>AbandonWare</del> Honorable Mentions
+          <button
+            class="toggle"
+            aria-expanded="true"
+            aria-label="Toggle section"
+          >
+            <img class="chevron" src="resources/svg/chevron-up.svg" alt="">
+          </button>
         </h2>
-        <p>some other side stuff</p>
+
+        <div class="content">
+          <div class="inner-content">
+            <div class="project-track project-track-secondary">
+              <!-- first -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/terminal.svg"
+                    alt=""
+                  >
+                  <h3>MacOS Terminal Theme Sync</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/macos-terminal-theme-sync"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    An event-driven macOS background utility that syncs
+                    <b>Terminal.app</b> profiles with the system's theme via
+                    AppleScript.
+                  </p>
+                </div>
+              </article>
+
+              <!-- guess what? MORE -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/curly-braces.svg"
+                    alt=""
+                  >
+                  <h3>Nova IDE Extension</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/clang-format-nova"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    An editor extension for Panic Nova providing seamless
+                    <code>clang-format</code> integration and automated
+                    formatting workflows across C-family and HDL languages
+                  </p>
+                </div>
+              </article>
+
+              <!-- I'm Jaking it Finn -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/plagiarism.svg"
+                    alt=""
+                  >
+                  <h3>LSH Plagiarism Detector</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/LSH-Plagiarism-Detector"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    A document similarity and plagiarism detection tool using
+                    <b>Locality-Sensitive Hashing (LSH)</b> in
+                    <code>Python</code> with a <i>Flask API</i> and a native
+                    macOS SwiftUI drag-and-drop interface.
+                  </p>
+                </div>
+              </article>
+
+              <!-- god is dead, we killed him -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/text.svg"
+                    alt=""
+                  >
+                  <h3>Search Engine Plugin</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/Kilo"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    An editor plugin with pluggable string-matching algorithms
+                    for configurable buffer search.
+                  </p>
+                </div>
+              </article>
+
+              <!-- still reading? -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/screen.svg"
+                    alt=""
+                  >
+                  <h3>This Website</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/Portfolio"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    I mean come on... I've built it from scratch with no AI or
+                    framework. You <b>HAVE</b> to give me credit... Do you know
+                    how <b>painfully dreadful</b> frontend Dev is for me?
+                  </p>
+                </div>
+              </article>
+
+              <!-- did you know male hippocampus get pregnant? -->
+              <article class="project-card project-card-secondary">
+                <figure>
+                  <img
+                    class="project-icon-secondary"
+                    src="resources/svg/stick.svg"
+                    alt=""
+                  >
+
+                  <h3>Silly Stuff</h3>
+                  <a
+                    class="main-project-link"
+                    href="https://github.com/RahanBenabid/Mini-Projects"
+                    target="_blank"
+                  >
+                    <img
+                      class="github-link"
+                      src="resources/svg/github.svg"
+                      alt="github.svg"
+                    >
+                  </a>
+                </figure>
+                <div class="card-description card-description-secondary">
+                  <p>
+                    Image to ASCII, string matching algorithms, Game of Life,
+                    you name it. I've put everything and anything in that poor
+                    repo.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
       <div class="wavy-line"></div>
@@ -153,32 +375,39 @@
       <!-- filler section -->
       <section id="more-of-me">
         <h2 class="section-header">
-          <img src="resources/svg/contact.svg" alt="" aria-hidden="true">
-          More About Me
+          <img src="resources/svg/wave.svg" alt="" aria-hidden="true">
         </h2>
-        <p>
-          Saepe aut est mollitia harum et similique voluptatibus ipsa fuga aut
-          ea quis et non. Commodi aspernatur consequatur quia qui ut eligendi
-          sunt ut unde ipsa. Illum illo perspiciatis magni veniam illum ut velit
-          cum cupiditate. Qui accusamus atque assumenda sit neque consequatur
-          fugit sunt eos voluptatem possimus rerum aliquid libero. Perspiciatis
-          aperiam dignissimos id iure ducimus odit quis quia. Dolor veniam
-          dolorem hic architecto vel ea tempore eius. Est ratione iste quia
-          voluptatem et qui omnis ut neque. Et est numquam voluptatum ipsa atque
-          asperiores qui quia sit explicabo consequatur a et. Et natus nesciunt
-          veritatis. Pariatur quo dolorem qui sunt sint minima rerum in ducimus
-          possimus harum illo nulla possimus nostrum. Est voluptatem nam
-          praesentium ut in sunt et totam nihil consequatur mollitia rem et.
-          Voluptas tenetur quas est quas esse mollitia et distinctio. Ipsa
-          asperiores assumenda cum numquam ratione officiis provident labore
-          fugit fuga architecto ut. Et et beatae voluptates et voluptatem et
-          omnis. Omnis libero excepturi quia adipisci dicta asperiores est
-          consequatur saepe repudiandae quia enim voluptatem sit perspiciatis. A
-          ratione praesentium omnis.
-        </p>
+        <div id="essay-on-me">
+          <p> Where's inspiration when you need it? </p>
+          <p>
+            If I get to keep two things in this world it's <i>Music</i> and
+            <i>Compiled Languages</i> (Transpilers can fuck off though).
+          </p>
+
+          <p>
+            Like most Computer Science nerds, it started with a guy wanting to
+            make games when he grows up (and doing piracy but we don't talk
+            about that). I kept my promise though...
+            <a href="resources/img/vita-homebrew.jpg" target="_blank">
+              <b>Here's a picture</b>
+            </a>
+            of my jailbroken <i>PSVita</i> doing things it shouldn't.
+          </p>
+          <p> How hirable do I sound right now? </p>
+        </div>
       </section>
     </main>
 
-    <footer><p>© &lt;CURRENT YEAR&gt; Rahan. &lt;CURRENT TIME&gt;</p></footer>
+    <footer>
+      <p>
+        © <span id="current-year"></span> Rahan.&nbsp;
+        <span id="clock">
+          URO
+          <span id="hour"></span>:<span id="min"></span>:<span id="sec"></span>
+        </span>
+      </p>
+      <img id="gopher" src="resources/img/gopher.png" alt="">
+    </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "sf-pro-thin";
+  src: url("../resources/fonts/SF-Pro-Text-Thin.otf");
+}
+
+@font-face {
   font-family: "sf-mono";
   src: url("../resources/fonts/SF-Mono-Medium.otf");
 }
@@ -103,20 +108,23 @@ body {
 #navigation {
   max-width: var(--max-width-hf);
   margin-inline: auto;
-  padding: 2ex;
+  padding: 1ex;
   border-bottom: solid var(--border-light) 1px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#memoji-nav {
-  display: inline;
+#memoji-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--font-default);
 }
 
 #memoji-nav img {
   width: 30px;
-  display: block;
 }
 
 #jump a {
@@ -134,6 +142,11 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 1rem;
+}
+
+#jump-down {
+  text-decoration: none;
+  color: var(--font-default);
 }
 
 .intro-memoji img {
@@ -184,6 +197,7 @@ body {
 }
 
 .project-card {
+  flex: none;
   width: 290px;
   max-height: 220px;
   margin: 0px 15px;
@@ -196,12 +210,17 @@ body {
 
 .project-card figure {
   margin: 0 0 14px;
+  height: 70px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
 }
 
-.project-card > figure > img {
+.coming-soon {
+  color: var(--font-light-darker);
+}
+
+.project-icon {
   width: 70px;
   border-radius: 20px;
   box-shadow: var(--custom-shadow);
@@ -252,11 +271,84 @@ body {
   text-decoration: none;
 }
 
-/* Wavy line */
+/* stinky projects */
+#side-projects .toggle {
+  background: none;
+  border: none;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+#side-projects .chevron {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#side-projects:not(.open) .chevron {
+  transform: rotate(180deg);
+}
+
+#side-projects .content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+#side-projects .inner-content {
+  overflow: hidden;
+}
+
+#side-projects.open .content {
+  grid-template-rows: 1fr;
+}
+
+.project-track-secondary {
+  /* flex: none; */
+  overflow: auto !important;
+  background: radial-gradient(
+    ellipse var(--r) 85% at var(--x) var(--y),
+    rgba(255, 250, 236, 0.95) 0%,
+    rgba(250, 212, 255, 0.75) 20%,
+    rgba(244, 168, 255, 0.5) 45%,
+    rgba(253, 155, 97, 0.4) 75%,
+    rgba(253, 155, 97, 0.15) 100%
+  );
+}
+
+.project-card-secondary figure {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  margin: 10px 0 10px;
+  padding-right: 10px;
+}
+
+.project-icon-secondary {
+  width: 30px;
+  border-radius: 0;
+}
+
+.github-link {
+  width: 25px !important;
+}
+
+.card-description-secondary p {
+  margin: 10px 0;
+}
+
+#essay-on-me a {
+  color: var(--font-default);
+  text-decoration: none;
+}
+
+/* Wavy lines */
 .wavy-line {
-  --s: 15px; /* size of the wave */
-  --b: 1.5px; /* thickness of the line */
-  --m: 0.8; /* curvature of the wave [0 2] */
+  margin: 25px 0px;
+  --s: 8px; /* size of the wave */
+  --b: 0.7px; /* thickness of the line */
+  --m: 1.1; /* curvature of the wave [0 2] */
 
   background: rgba(134, 126, 120, 0.7);
   --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b)/2);
@@ -279,6 +371,9 @@ body {
 }
 
 /* footer */
+footer {
+  background-color: var(--sepia-custom);
+}
 footer > p {
   max-width: var(--max-width-hf);
   margin-inline: auto;
@@ -287,5 +382,19 @@ footer > p {
   border-top: solid var(--border-light) 1px;
   color: var(--font-light);
   padding-bottom: 10em;
-  background-color: var(--sepia-custom);
+  font-size: 15px;
+}
+
+#clock {
+  font-family: "sf-pro-thin";
+}
+
+#gopher {
+  width: 50px;
+  position: absolute;
+  margin-left: calc(var(--max-width-page) - 70px);
+}
+
+#gopher:hover {
+  cursor: pointer;
 }
