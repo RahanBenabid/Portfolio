@@ -1,16 +1,19 @@
 @font-face {
   font-family: "sf-round";
-  src: url("../resources/fonts/SF-Compact-Rounded-Regular.otf");
+  src: url("../resources/fonts/SF-Compact-Rounded-Regular.woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "sf-pro-thin";
-  src: url("../resources/fonts/SF-Pro-Text-Thin.otf");
+  src: url("../resources/fonts/SF-Pro-Text-Thin.woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "sf-mono";
   src: url("../resources/fonts/SF-Mono-Medium.otf");
+  font-display: swap;
 }
 
 @property --x {
@@ -78,6 +81,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* sticky header would otherwise cover anchor targets */
+  scroll-padding-top: 4rem;
+  /* stop iOS from inflating text on rotate */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -96,6 +104,8 @@ body {
     BlinkMacSystemFont,
     sans-serif;
   color: var(--font-default);
+  /* long words/urls should never force sideways scroll */
+  overflow-wrap: break-word;
 }
 
 #header-wrapper {
@@ -103,6 +113,8 @@ body {
   background-color: var(--sepia-custom);
   position: sticky;
   top: 0;
+  /* keep card shadows from painting over the header */
+  z-index: 10;
 }
 
 #navigation {
@@ -160,6 +172,7 @@ body {
     rgba(233, 159, 104, 0.15) 100%
   );
   width: 250px;
+  max-width: 100%;
   display: block;
 }
 
@@ -194,18 +207,24 @@ body {
   overflow-x: auto;
   border: solid #f4ede3 1px;
   border-radius: 8px;
+  /* native-feeling swipe, and no rubber-banding the page sideways */
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .project-card {
   flex: none;
   width: 290px;
-  max-height: 220px;
+  /* max-height clipped wrapped text when fonts/text size differ */
+  min-height: 200px;
   margin: 0px 15px;
   padding: 8px;
   background-color: var(--sepia-custom-secondary);
   border: solid #f4ede3 1px;
   border-radius: 12px;
   box-shadow: var(--custom-shadow);
+  scroll-snap-align: center;
 }
 
 .project-card figure {
@@ -373,6 +392,8 @@ body {
 /* footer */
 footer {
   background-color: var(--sepia-custom);
+  /* anchor for the gopher */
+  position: relative;
 }
 footer > p {
   max-width: var(--max-width-hf);
@@ -392,9 +413,56 @@ footer > p {
 #gopher {
   width: 50px;
   position: absolute;
-  margin-left: calc(var(--max-width-page) - 70px);
+  right: 20px;
+  margin: 0;
 }
 
 #gopher:hover {
   cursor: pointer;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  #navigation {
+    gap: 0.5rem;
+  }
+
+  #jump a {
+    font-size: 15px;
+    margin-left: 4px;
+    padding: 6px 2px; /* bigger tap target */
+  }
+
+  #intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-memoji img {
+    width: min(220px, 60vw);
+  }
+
+  .project-card {
+    width: min(290px, 82vw);
+  }
+
+  #gopher {
+    right: 10px;
+  }
+}
+
+/* accessibility / battery: stop the endless glow repaint */
+@media (prefers-reduced-motion: reduce) {
+  .project-track {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  #side-projects .content,
+  #side-projects .chevron {
+    transition: none;
+  }
 }
