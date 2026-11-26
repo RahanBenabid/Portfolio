@@ -8,6 +8,40 @@
   src: url("../resources/fonts/SF-Mono-Medium.otf");
 }
 
+@property --x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 30%;
+}
+@property --y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 18%;
+}
+@property --r {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 95%;
+}
+
+@keyframes glow-drift {
+  0% {
+    --x: 30%;
+    --y: 18%;
+    --r: 95%;
+  }
+  50% {
+    --x: 62%;
+    --y: 45%;
+    --r: 115%;
+  }
+  100% {
+    --x: 80%;
+    --y: 10%;
+    --r: 90%;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -30,8 +64,11 @@
   --font-on-dark: #fff8ee;
 
   /* width */
-  --max-width-fh: 660px;
+  --max-width-hf: 660px;
   --max-width-page: 700px;
+  --custom-shadow:
+    0 1px 2px rgba(60, 40, 20, 0.06), 0 4px 8px rgba(60, 40, 20, 0.06),
+    0 12px 24px rgba(60, 40, 20, 0.08), 0 24px 48px rgba(60, 40, 20, 0.06);
 }
 
 html {
@@ -64,7 +101,7 @@ body {
 }
 
 #navigation {
-  max-width: var(--max-width-fh);
+  max-width: var(--max-width-hf);
   margin-inline: auto;
   padding: 2ex;
   border-bottom: solid var(--border-light) 1px;
@@ -83,6 +120,7 @@ body {
 }
 
 #jump a {
+  font-size: 17px;
   color: var(--font-default);
   text-decoration: none;
   margin-left: 8px;
@@ -128,24 +166,9 @@ body {
 }
 
 /* main projects cards */
-@property --x {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 30%;
-}
-@property --y {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 18%;
-}
-@property --r {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 95%;
-}
 
 .project-track {
-  padding: 10px 10px 50px;
+  padding: 30px 0px;
   background: radial-gradient(
     ellipse var(--r) 85% at var(--x) var(--y),
     rgba(255, 250, 236, 0.95) 0%,
@@ -160,52 +183,32 @@ body {
   border-radius: 8px;
 }
 
-@keyframes glow-drift {
-  0% {
-    --x: 30%;
-    --y: 18%;
-    --r: 95%;
-  }
-  50% {
-    --x: 62%;
-    --y: 45%;
-    --r: 115%;
-  }
-  100% {
-    --x: 80%;
-    --y: 10%;
-    --r: 90%;
-  }
-}
-
-/* @media (prefers-reduced-motion: reduce) {
-  .project-track {
-    animation: none;
-  }
-} */
-
 .project-card {
-  max-width: 310px;
-  max-height: 400px;
-  margin: 0px 20px;
-  padding: 5px;
+  width: 290px;
+  max-height: 220px;
+  margin: 0px 15px;
+  padding: 8px;
   background-color: var(--sepia-custom-secondary);
-  border-radius: 6px;
-  box-shadow:
-    0 1px 2px rgba(60, 40, 20, 0.06),
-    0 4px 8px rgba(60, 40, 20, 0.06),
-    0 12px 24px rgba(60, 40, 20, 0.08),
-    0 24px 48px rgba(60, 40, 20, 0.06);
+  border: solid #f4ede3 1px;
+  border-radius: 12px;
+  box-shadow: var(--custom-shadow);
 }
 
 .project-card figure {
   margin: 0 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.project-card img {
-  display: block;
-  width: 100%;
-  border-radius: 5px;
+.project-card > figure > img {
+  width: 70px;
+  border-radius: 20px;
+  box-shadow: var(--custom-shadow);
+}
+
+.main-project-link img {
+  width: 17px;
 }
 
 .card-description {
@@ -249,9 +252,35 @@ body {
   text-decoration: none;
 }
 
+/* Wavy line */
+.wavy-line {
+  --s: 15px; /* size of the wave */
+  --b: 1.5px; /* thickness of the line */
+  --m: 0.8; /* curvature of the wave [0 2] */
+
+  background: rgba(134, 126, 120, 0.7);
+  --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b)/2);
+  height: calc(2 * var(--R));
+  width: 100%;
+  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
+  mask:
+    radial-gradient(
+        var(--R) at left 50% bottom calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      calc(50% - 2 * var(--s)) calc(50% - var(--s) / 2 - var(--b) / 2) /
+      calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x,
+    radial-gradient(
+        var(--R) at left 50% top calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      50% calc(50% + var(--s) / 2 + var(--b) / 2) / calc(4 * var(--s))
+      calc(var(--s) + var(--b)) repeat-x;
+}
+
 /* footer */
 footer > p {
-  max-width: var(--max-width-fh);
+  max-width: var(--max-width-hf);
   margin-inline: auto;
   margin-block: 0;
   padding-block: 2ex;

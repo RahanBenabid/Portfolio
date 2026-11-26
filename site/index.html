@@ -8,6 +8,7 @@
     <title>My Humble Website</title>
   </head>
   <body>
+    <div id="home"></div>
     <div id="header-wrapper">
       <header>
         <nav id="navigation">
@@ -18,7 +19,7 @@
             </a>
           </div>
           <div id="jump">
-            <a href="/">Home</a>
+            <a href="#home">Home</a>
             <a href="#main-projects">Projects</a>
             <a href="#side-projects">Other</a>
             <a href="#more-of-me">Contact</a>
@@ -59,7 +60,15 @@
           <!-- first project -->
           <article class="project-card">
             <figure>
-              <img src="resources/img/project-evixa.png" alt="CRun terminal">
+              <img src="resources/img/project-evixa.jpeg" alt="EVixa">
+              <h3>EVixa</h3>
+              <a
+                class="main-project-link"
+                href="https://evixa.app"
+                target="_blank"
+              >
+                <img src="resources/svg/link.svg" alt="link">
+              </a>
             </figure>
             <div class="card-description">
               <div class="tags">
@@ -68,7 +77,6 @@
                 <span>Node.JS</span>
                 <span>TypeScript</span>
               </div>
-              <h3>EVixa</h3>
               <p>
                 Full-time Lead developer and system Administrator at
                 <a href="https://www.brenztravels.com" target="_blank">
@@ -78,39 +86,19 @@
             </div>
           </article>
 
-          <!-- more!!! -->
-          <article class="project-card">
-            <figure>
-              <img src="resources/img/project-crun.png" alt="CRun terminal">
-            </figure>
-            <div class="card-description">
-              <div class="tags">
-                <span>System Programming</span>
-                <span>Swift</span>
-                <span>C</span>
-                <span>Command Line Interface</span>
-              </div>
-              <h3>CRun</h3>
-              <p>
-                Native multi-language execution tool built for instal fast local
-                runs. Built with <i>Care</i> and <i>Passion</i>.
-              </p>
-            </div>
-          </article>
-
           <!-- more of the same -->
           <article class="project-card">
             <figure>
-              <img src="resources/img/project-crun.png" alt="CRun terminal">
+              <img src="resources/img/project-vormi.png" alt="CRun terminal">
+              <h3>Vormi</h3>
             </figure>
             <div class="card-description">
               <div class="tags">
-                <span>Swift</span>
-                <span>C</span>
-                <span>System Programming</span>
-                <span>Command Line Interface</span>
+                <span>Backend Development</span>
+                <span>Team Management</span>
+                <span>Startup</span>
+                <span>Node.JS</span>
               </div>
-              <h3>CRun</h3>
               <p>
                 Native multi-language execution tool built for instal fast local
                 runs.
@@ -118,9 +106,38 @@
             </div>
           </article>
 
+          <!-- more!!! -->
+          <article class="project-card">
+            <figure>
+              <img src="resources/img/project-crun.png" alt="CRun terminal">
+              <h3>CRun</h3>
+              <a
+                class="main-project-link"
+                href="https://github.com/RahanBenabid/crun"
+                target="_blank"
+              >
+                <img src="resources/svg/link.svg" alt="link">
+              </a>
+            </figure>
+            <div class="card-description">
+              <div class="tags">
+                <span>System Programming</span>
+                <span>Swift</span>
+                <span>C</span>
+                <span>Command Line Interface</span>
+              </div>
+              <p>
+                Native multi-language execution tool built for instant fast
+                local runs. Built with <i>Care</i> and <i>Passion</i>.
+              </p>
+            </div>
+          </article>
+
           <!-- more -->
         </div>
       </section>
+
+      <div class="wavy-line"></div>
 
       <!-- side projects -->
       <section id="side-projects">
@@ -130,6 +147,8 @@
         </h2>
         <p>some other side stuff</p>
       </section>
+
+      <div class="wavy-line"></div>
 
       <!-- filler section -->
       <section id="more-of-me">
@@ -159,6 +178,7 @@
         </p>
       </section>
     </main>
+
     <footer><p>© &lt;CURRENT YEAR&gt; Rahan. &lt;CURRENT TIME&gt;</p></footer>
   </body>
 </html>
