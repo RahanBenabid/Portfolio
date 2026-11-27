@@ -416,10 +416,33 @@ footer > p {
   position: absolute;
   right: 20px;
   margin: 0;
+  cursor: pointer;
 }
 
-#gopher:hover {
-  cursor: pointer;
+#gopher {
+  transform-origin: bottom center;
+}
+
+@keyframes boop {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1.16, 0.72);
+  }
+  55% {
+    transform: scale(0.94, 1.06);
+  }
+  80% {
+    transform: scale(1.03, 0.98);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+#gopher.squish {
+  animation: boop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* mobile */
