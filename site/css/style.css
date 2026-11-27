@@ -409,7 +409,13 @@ footer > p {
 }
 
 #clock {
-  font-family: "sf-pro-thin";
+  font-family:
+    system-ui,
+    -apple-system,
+    "Inter",
+    sans-serif;
+  font-weight: 200;
+  font-variant-numeric: tabular-nums;
 }
 
 #gopher {
